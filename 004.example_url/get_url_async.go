@@ -46,7 +46,7 @@ func fetch(url string, ch chan string) {
 		return
 	}
 
-	ch <- fmt.Sprintf("%.2fs\t%d\t%s", time.Since(start).Seconds(), numBytes, url)
+	ch <- fmt.Sprintf("%.2fs\t%s\t%d(Bytes)\t%s", time.Since(start).Seconds(), resp.Status, numBytes, url)
 }
 
 func main() {
