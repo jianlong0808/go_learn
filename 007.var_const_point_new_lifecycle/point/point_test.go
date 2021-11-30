@@ -1,6 +1,11 @@
 package point
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
+
+var variable1Ptr *int
 
 func TestPoint(t *testing.T) {
 	num1 := 10
@@ -15,6 +20,15 @@ func TestPoint(t *testing.T) {
 	t.Log(getNumPtr() == getNumPtr())
 	//返回的是true, 虽然地址不同, 但是指针指向地址的值相同
 	t.Log(*getNumPtr() == *getNumPtr())
+
+	//会报错, 因为variable1Ptr指针变量没有指向对象, 默认为nil
+	//*variable1Ptr = 3
+	//会报错, 因为variable1Ptr指针变量没有指向对象, 默认为nil
+	//t.Log(*variable1Ptr)
+
+	//成功, variable1Ptr成功指向了一个int类型变量的地址
+	variable1Ptr = &num1
+	fmt.Println(*variable1Ptr)
 }
 
 func getNumPtr() *int {

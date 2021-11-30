@@ -49,5 +49,6 @@ func counter(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/", handlerOptimize)
 	http.HandleFunc("/count", counter)
+	http.HandleFunc("/svg", getSvg)
 	http.ListenAndServe("localhost:8080", nil)
 }
