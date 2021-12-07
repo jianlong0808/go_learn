@@ -83,6 +83,7 @@ jianlong`
 	}
 	fmt.Printf("包含的字符个数为: %d\n", n)
 
+	//字符串转数字
 	s7 := "12334"
 	sLen := len(s7)
 	ret := true
@@ -103,6 +104,11 @@ jianlong`
 	} else {
 		fmt.Printf("\"%s\": 不可以转换成数字 \n", s7)
 	}
+
+	//字符串转数字
+	retNum, _ := strconv.ParseInt(s7, 10, 64)
+	fmt.Println("转化成十进制int64数字为: ", retNum)
+
 }
 
 //如果字符串需要不断拼接, bytes.Buffer更合适
