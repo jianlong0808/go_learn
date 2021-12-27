@@ -1,7 +1,6 @@
 package logging
 
 import (
-	"fmt"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/rifflock/lfshook"
 	"github.com/sirupsen/logrus"
@@ -31,7 +30,6 @@ func NewLoggerWithRotate() (*logrus.Logger, error) {
 	)
 
 	levels := logrus.AllLevels
-	fmt.Println(levels)
 	pathMap := lfshook.WriterMap{}
 	for _, level := range levels {
 		pathMap[level] = writer
